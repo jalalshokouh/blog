@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <div th:replace="fragment/layout::head"></div>
+</head>
+<body>
+
+<form action="#" th:action="@{/registerPost}" th:object="${postData}" method="post" enctype="multipart/form-data">
+    <input type="text" th:field="*{title}">
+    <input type="file" th:field="*{multipartFile}">
+    <input type="submit">
+</form>
+
+</body>
+</html>

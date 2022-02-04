@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <div th:replace="fragment/layout::head"></div>
+</head>
+<body>
+
+<fieldset>
+<form action="#" th:action="registerUser" th:object="${user}" method="post" enctype="multipart/form-data">
+    <ul >
+        <li>
+    <label for="name">name:</label>
+    <input type="text" th:field="*{name}" id="name">
+        </li>
+        <li>
+            <label for="email">email:</label>
+            <input type="email" th:field="*{email}" id="email">
+        </li>
+        <li>
+            <label for="password">password:</label>
+            <input type="password" th:field="*{password}" id="password">
+        </li>
+        <li>
+            <label for="pic">picture:</label>
+            <input type="file" th:field="*{userPic}" id="pic">
+        </li>
+
+    <input type="submit">
+
+    </ul>
+</form>
+</fieldset>
+<fieldset>
+    <div th:each="u : ${users}">
+        <ul>
+            <li th:text="*{u.name}"></li>
+            <li th:text="*{u.email}"></li>
+        </ul>
+            <img th:src="'/userPic/' + ${u.getCover()}">
+    </div>
+</fieldset>
+</body>
+</html>
