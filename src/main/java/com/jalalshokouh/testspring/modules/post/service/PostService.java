@@ -2,20 +2,15 @@ package com.jalalshokouh.testspring.modules.post.service;
 
 import com.jalalshokouh.testspring.modules.post.entity.Post;
 import com.jalalshokouh.testspring.modules.post.repository.IPostRepository;
-import com.sun.istack.NotNull;
-import org.apache.catalina.LifecycleState;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.ResourceUtils;
 
-import javax.imageio.stream.FileImageInputStream;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
 
 @Service
 public class PostService {

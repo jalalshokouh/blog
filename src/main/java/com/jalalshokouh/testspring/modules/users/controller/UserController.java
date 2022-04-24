@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.List;
 
 @Controller
 public class UserController {
@@ -31,19 +30,6 @@ public class UserController {
         userService.addUser(users);
         System.out.println(users.toString());
         return "redirect:registerUser";
-    }
-
-
-    @RequestMapping(value = "/addUser" ,method = RequestMethod.POST)
-    @ResponseBody
-    public Users addUser(@RequestBody Users user) throws IOException {
-        return userService.addUser(user);
-    }
-
-    @RequestMapping(value = "/showUser" ,method = RequestMethod.GET)
-    @ResponseBody
-    public List<Users> showUsers (){
-        return userService.showUser();
     }
 
 }

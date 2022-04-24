@@ -6,7 +6,12 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.jalalshokouh.testspring.modules.users.entity.Users;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import java.util.List;
 
 @Entity
